@@ -17,7 +17,8 @@ INSERT INTO Student (student_ID, full_name, phone_no, email, date_of_birth, home
 INSERT INTO Maintenance_Staff (staff_ID, full_name, phone_no, email, date_of_birth, home_address, nationality, occupation, role, salary, hire_date, years_of_experience, reporting_manager, specialization, license, license_expiry_date) VALUES
 ('MST2609001','Ahmad Fauzi','+6019-1112222','ahmad.f@uao.xmum.edu.my','1985-03-15','10 Jalan Damai, 43000 Kajang, Selangor','Malaysian','Technician','maintenance_staff',3500.00,'2019-01-15',7,'Lim Kok Meng','Electrical','E-2025-001','2026-12-31'),
 ('MST2609002','Siti Nurhaliza','+6012-3334444','siti.n@uao.xmum.edu.my','1990-07-22','25 Jalan Mawar, 43900 Sepang, Selangor','Malaysian','Technician','maintenance_staff',3200.00,'2021-06-01',5,'Lim Kok Meng','Plumbing','P-2024-089','2027-08-15'),
-('MST2609003','Rajesh Kumar','+6016-5556666','rajesh.k@uao.xmum.edu.my','1988-11-08','78 Jalan Ria, 47100 Puchong, Selangor','Malaysian','Technician','maintenance_staff',3800.00,'2018-03-20',8,'Lim Kok Meng','HVAC','H-2025-012','2026-05-10');
+('MST2609003','Rajesh Kumar','+6016-5556666','rajesh.k@uao.xmum.edu.my','1988-11-08','78 Jalan Ria, 47100 Puchong, Selangor','Malaysian','Technician','maintenance_staff',3800.00,'2018-03-20',8,'Lim Kok Meng','HVAC','H-2025-012','2026-05-10'),
+('MST2609004','Tan Ah Kaw','+6013-2224446','tanak.k@uao.xmum.edu.my','1983-08-12','21 Jalan Cempaka, 43900 Sepang, Selangor','Malaysian','Technician','maintenance_staff',3300.00,'2020-09-01',6,'Lim Kok Meng','Furniture','C-2025-045','2027-03-31');
 
 INSERT INTO Admin_Staff (staff_ID, full_name, phone_no, email, date_of_birth, home_address, nationality, occupation, role, salary, hire_date, years_of_experience, reporting_manager, department) VALUES
 ('ADM2609001','Lim Kok Meng','+6012-9998888','lim.km@uao.xmum.edu.my','1980-05-20','5 Jalan Utama, 46200 PJ, Selangor','Malaysian','Manager','admin_staff',5500.00,'2017-02-01',9,'Dr. Zamratul','Accommodation'),
@@ -88,7 +89,8 @@ INSERT INTO Asset (asset_ID, asset_name, asset_category, asset_condition, acquir
 ('AST00009','Study Desk','furniture','good','2025-03-20','BED00007'),
 ('AST00010','Wardrobe','furniture','fair','2025-03-20','BED00008'),
 ('AST00011','Air Conditioner','appliance','poor','2025-04-10','BED00010'),
-('AST00012','Bedside Lamp','fixture','good','2025-05-01','BED00011');
+('AST00012','Bedside Lamp','fixture','good','2025-05-01','BED00011'),
+('AST00013','Study Desk','furniture','fair','2025-03-20','BED00009');
 
 INSERT INTO Invoice (invoice_no, period_start, period_end, issue_date, due_date, total_amount, invoice_status, lease_no) VALUES
 ('INV0000001','2026-02-01','2026-02-28','2026-02-01','2026-02-15',1350.00,'paid','1'),
@@ -146,13 +148,15 @@ INSERT INTO Payment (payment_ID, payment_date, amount, payment_method, gateway_t
 ('PAY0000014','2026-05-01',550.00,'gateway','TXN-20260501-005','failed','INV0000010');
 
 INSERT INTO Maintenance_Request (request_ID, date_raised, request_priority, request_status, request_description, student_ID, staff_ID, asset_ID) VALUES
-('1','2026-04-10','high','in_progress','Air conditioner not cooling properly','CST2609003','MST2609001','AST00005'),
+('1','2026-04-10','high','in_progress','Air conditioner not cooling properly','CST2609003','MST2609003','AST00005'),
 ('2','2026-04-15','medium','open','Study desk drawer broken','CST2609001',NULL,'AST00001'),
-('3','2026-05-01','urgent','in_progress','Water heater completely dead - no hot water','CST2609005','MST2609003','AST00008'),
-('4','2026-05-05','low','resolved','Ceiling fan making rattling noise','CST2609005','MST2609002','AST00007'),
-('5','2026-05-10','medium','open','Wardrobe door hinge loose','CST2609006',NULL,'AST00010'),
-('6','2026-05-15','high','closed','Bedside lamp flickering - replaced bulb','CST2609002','MST2609001','AST00004'),
-('7','2026-05-20','medium','open','Air conditioner water leaking','CST2609001',NULL,'AST00011'),
-('8','2026-06-01','urgent','in_progress','Study desk height adjustment broken','CST2609008','MST2609001','AST00009'),
-('9','2026-06-05','low','open','Mattress sagging - needs replacement','CST2609007',NULL,'AST00001'),
-('10','2026-06-10','medium','in_progress','Air conditioner remote control not working','CST2609009','MST2609002','AST00011');
+('3','2026-04-20','low','resolved','Study desk wobbly - loose screws tightened','CST2609004','MST2609004','AST00006'),
+('4','2026-05-01','urgent','in_progress','Water heater completely dead - no hot water','CST2609005','MST2609002','AST00008'),
+('5','2026-05-05','low','resolved','Ceiling fan making rattling noise','CST2609005','MST2609001','AST00007'),
+('6','2026-05-10','medium','in_progress','Wardrobe door hinge loose','CST2609007','MST2609004','AST00010'),
+('7','2026-05-15','high','closed','Bedside lamp flickering - replaced bulb','CST2609002','MST2609001','AST00004'),
+('8','2026-05-20','medium','in_progress','Air conditioner water leaking','CST2609009','MST2609003','AST00011'),
+('9','2026-05-25','low','open','Study desk drawer stuck','CST2609006',NULL,'AST00009'),
+('10','2026-06-01','medium','in_progress','Study desk height adjustment broken','CST2609008','MST2609004','AST00013'),
+('11','2026-06-05','low','open','Mattress sagging - needs replacement','CST2609002',NULL,'AST00003'),
+('12','2026-06-10','medium','open','Bedside lamp not turning on','CST2609010',NULL,'AST00012');
