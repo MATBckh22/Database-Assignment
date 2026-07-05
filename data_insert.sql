@@ -107,10 +107,26 @@ INSERT INTO Invoice (invoice_no, period_start, period_end, issue_date, due_date,
 ('INV0000007','2026-03-15','2026-04-14','2026-03-15','2026-03-29',350.00,'paid','3'),
 ('INV0000008','2026-03-01','2026-03-31','2026-03-01','2026-03-15',1440.00,'paid','4'),
 ('INV0000009','2026-03-15','2026-04-14','2026-03-15','2026-03-29',1500.00,'paid','6'),
-('INV0000010','2026-04-15','2026-05-14','2026-04-15','2026-04-29',550.00,'overdue','6'),
+('INV0000010','2026-04-15','2026-05-14','2026-04-15','2026-04-29',550.00,'unpaid','6'),
 ('INV0000011','2026-04-01','2026-04-30','2026-04-01','2026-04-15',1110.00,'paid','7'),
 ('INV0000012','2026-03-01','2026-03-31','2026-03-01','2026-03-15',1140.00,'paid','5'),
-('INV0000013','2026-05-15','2026-06-14','2026-05-15','2026-05-29',1200.00,'unpaid','10');
+('INV0000013','2026-05-15','2026-06-14','2026-05-15','2026-05-29',1200.00,'unpaid','10'),
+('INV0000014','2026-04-01','2026-04-30','2026-04-01','2026-04-15',350.00,'unpaid','2'),
+('INV0000015','2026-04-01','2026-04-30','2026-04-01','2026-04-15',480.00,'unpaid','4'),
+('INV0000016','2026-05-15','2026-06-14','2026-05-15','2026-05-29',500.00,'unpaid','6'),
+('INV0000017','2026-05-01','2026-05-31','2026-05-01','2026-05-15',370.00,'unpaid','7'),
+('INV0000018','2026-06-15','2026-07-14','2026-06-15','2026-06-29',400.00,'unpaid','10'),
+('INV0000019','2026-05-01','2026-05-31','2026-05-01','2026-05-15',450.00,'paid','1'),
+('INV0000020','2026-06-01','2026-06-30','2026-06-01','2026-06-15',450.00,'unpaid','1'),
+('INV0000021','2026-05-01','2026-05-31','2026-05-01','2026-05-15',350.00,'unpaid','2'),
+('INV0000022','2026-04-15','2026-05-14','2026-04-15','2026-04-29',350.00,'paid','3'),
+('INV0000023','2026-05-15','2026-06-14','2026-05-15','2026-05-29',350.00,'unpaid','3'),
+('INV0000024','2026-05-01','2026-05-31','2026-05-01','2026-05-15',480.00,'partially_paid','4'),
+('INV0000025','2026-06-01','2026-06-30','2026-06-01','2026-06-15',370.00,'unpaid','7'),
+('INV0000026','2026-04-15','2026-05-14','2026-04-15','2026-04-29',1110.00,'paid','8'),
+('INV0000027','2026-05-15','2026-06-14','2026-05-15','2026-05-29',370.00,'unpaid','8'),
+('INV0000028','2026-05-01','2026-05-31','2026-05-01','2026-05-15',1560.00,'paid','9'),
+('INV0000029','2026-06-01','2026-06-30','2026-06-01','2026-06-15',520.00,'unpaid','9');
 
 INSERT INTO Invoice_Line (line_ID, fee_type, line_description, line_amount, invoice_no) VALUES
 ('1','rent','Monthly rent - February 2026',450.00,'INV0000001'),
@@ -134,7 +150,25 @@ INSERT INTO Invoice_Line (line_ID, fee_type, line_description, line_amount, invo
 ('19','rent','Monthly rent - March 2026',380.00,'INV0000012'),
 ('20','deposit','Security deposit (refundable)',760.00,'INV0000012'),
 ('21','rent','Monthly rent - May-Jun 2026',400.00,'INV0000013'),
-('22','deposit','Security deposit (refundable)',800.00,'INV0000013');
+('22','deposit','Security deposit (refundable)',800.00,'INV0000013'),
+('23','rent','Monthly rent - April 2026',350.00,'INV0000014'),
+('24','rent','Monthly rent - April 2026',480.00,'INV0000015'),
+('25','rent','Monthly rent - May-Jun 2026',500.00,'INV0000016'),
+('26','rent','Monthly rent - May 2026',370.00,'INV0000017'),
+('27','rent','Monthly rent - Jun-Jul 2026',400.00,'INV0000018'),
+('28','rent','Monthly rent - May 2026',450.00,'INV0000019'),
+('29','rent','Monthly rent - June 2026',450.00,'INV0000020'),
+('30','rent','Monthly rent - May 2026',350.00,'INV0000021'),
+('31','rent','Monthly rent - Apr-May 2026',350.00,'INV0000022'),
+('32','rent','Monthly rent - May-Jun 2026',350.00,'INV0000023'),
+('33','rent','Monthly rent - May 2026',480.00,'INV0000024'),
+('34','rent','Monthly rent - June 2026',370.00,'INV0000025'),
+('35','rent','Monthly rent - Apr-May 2026',370.00,'INV0000026'),
+('36','deposit','Security deposit (refundable)',740.00,'INV0000026'),
+('37','rent','Monthly rent - May-Jun 2026',370.00,'INV0000027'),
+('38','rent','Monthly rent - May 2026',520.00,'INV0000028'),
+('39','deposit','Security deposit (refundable)',1040.00,'INV0000028'),
+('40','rent','Monthly rent - June 2026',520.00,'INV0000029');
 
 INSERT INTO Payment (payment_ID, payment_date, amount, payment_method, gateway_txn_ref, payment_status, invoice_no) VALUES
 ('PAY0000001','2026-02-05',1350.00,'bank_transfer',NULL,'completed','INV0000001'),
@@ -150,7 +184,13 @@ INSERT INTO Payment (payment_ID, payment_date, amount, payment_method, gateway_t
 ('PAY0000011','2026-04-20',370.00,'bank_transfer',NULL,'completed','INV0000011'),
 ('PAY0000012','2026-04-25',740.00,'gateway','TXN-20260425-004','completed','INV0000011'),
 ('PAY0000013','2026-03-18',1140.00,'bank_transfer',NULL,'completed','INV0000012'),
-('PAY0000014','2026-05-01',550.00,'gateway','TXN-20260501-005','failed','INV0000010');
+('PAY0000014','2026-05-01',550.00,'gateway','TXN-20260501-005','failed','INV0000010'),
+('PAY0000015','2026-05-12',450.00,'bank_transfer',NULL,'completed','INV0000019'),
+('PAY0000016','2026-05-09',350.00,'cash',NULL,'completed','INV0000022'),
+('PAY0000017','2026-05-14',200.00,'gateway','TXN-20260514-007','completed','INV0000024'),
+('PAY0000018','2026-04-27',1110.00,'bank_transfer',NULL,'completed','INV0000026'),
+('PAY0000019','2026-05-10',1560.00,'gateway','TXN-20260510-008','failed','INV0000028'),
+('PAY0000020','2026-05-16',1560.00,'cash',NULL,'completed','INV0000028');
 
 INSERT INTO Maintenance_Request (request_ID, date_raised, request_priority, request_status, request_description, student_ID, staff_ID, asset_ID) VALUES
 ('1','2026-04-10','high','in_progress','Air conditioner not cooling properly','CST2609003','MST2609003','AST00005'),
