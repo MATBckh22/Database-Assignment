@@ -90,7 +90,12 @@ INSERT INTO Asset (asset_ID, asset_name, asset_category, asset_condition, acquir
 ('AST00010','Wardrobe','furniture','fair','2025-03-20','BED00008'),
 ('AST00011','Air Conditioner','appliance','poor','2025-04-10','BED00010'),
 ('AST00012','Bedside Lamp','fixture','good','2025-05-01','BED00011'),
-('AST00013','Study Desk','furniture','fair','2025-03-20','BED00009');
+('AST00013','Study Chair','furniture','poor','2024-08-15','BED00001'),
+('AST00014','Wardrobe','furniture','poor','2024-09-10','BED00003'),
+('AST00015','Water Heater','appliance','out_of_service','2024-07-20','BED00007'),
+('AST00016','Ceiling Fan','fixture','poor','2024-11-05','BED00009'),
+('AST00017','Mattress','furniture','out_of_service','2024-05-25','BED00011');
+
 
 INSERT INTO Invoice (invoice_no, period_start, period_end, issue_date, due_date, total_amount, invoice_status, lease_no) VALUES
 ('INV0000001','2026-02-01','2026-02-28','2026-02-01','2026-02-15',1350.00,'paid','1'),
