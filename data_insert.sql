@@ -47,13 +47,16 @@ INSERT INTO Hall (hall_no, hall_name, hall_location, staff_ID) VALUES
 
 INSERT INTO Room (room_ID, room_type, monthly_rate, hall_no) VALUES
 ('101','single',450,'A01'),('102','twin',350,'A01'),('103','single',480,'A01'),('104','twin',380,'A01'),
-('201','single',500,'A02'),('202','twin',370,'A02'),('203','single',520,'A02'),('204','twin',400,'A02');
+('201','single',500,'A02'),('202','twin',370,'A02'),('203','single',520,'A02'),('204','twin',400,'A02'),
+('105','single',460,'A01'),('106','twin',360,'A01'),('205','single',510,'A02'),('206','twin',390,'A02');
 
 INSERT INTO Bed (bed_ID, bed_label, room_ID) VALUES
 ('BED00001','Goodnite','101'),('BED00002','Goodnite','102'),('BED00003','Goodnite','102'),
 ('BED00004','Goodnite','103'),('BED00005','Goodnite','104'),('BED00006','Goodnite','104'),
 ('BED00007','King Koil','201'),('BED00008','King Koil','202'),('BED00009','King Koil','202'),
-('BED00010','King Koil','203'),('BED00011','King Koil','204'),('BED00012','King Koil','204');
+('BED00010','King Koil','203'),('BED00011','King Koil','204'),('BED00012','King Koil','204'),
+('BED00013','Goodnite','105'),('BED00014','Goodnite','106'),('BED00015','Goodnite','106'),
+('BED00016','King Koil','205'),('BED00017','King Koil','206'),('BED00018','King Koil','206');
 
 INSERT INTO Lease (lease_no, start_date, intended_end_date, actual_end_date, lease_status, student_ID, bed_ID, application_ID, staff_ID) VALUES
 ('1','2026-02-01','2026-08-01',NULL,'active','CST2609001','BED00001','1','ADM2609002'),
