@@ -37,7 +37,9 @@ INSERT INTO Application (application_ID, submission_date, application_status, st
 ('5','2026-02-15','approved','CST2609005','ADM2609003'),('6','2026-03-01','approved','CST2609006','ADM2609002'),
 ('7','2026-03-10','approved','CST2609007','ADM2609003'),('8','2026-03-15','approved','CST2609008','ADM2609003'),
 ('9','2026-04-01','approved','CST2609009','ADM2609003'),('10','2026-04-15','approved','CST2609010','ADM2609002'),
-('11','2026-05-01','waitlisted','CST2609011','ADM2609002'),('12','2026-05-15','pending','CST2609012',NULL);
+('11','2026-05-01','waitlisted','CST2609011','ADM2609002'),('12','2026-05-15','pending','CST2609012',NULL),
+('13','2026-05-20','approved','CST2609011','ADM2609002'),('14','2026-05-25','approved','CST2609012','ADM2609003'),
+('15','2026-05-10','approved','CST2609005','ADM2609003'),('16','2026-02-20','approved','CST2609009','ADM2609003');
 
 INSERT INTO Hall (hall_no, hall_name, hall_location, staff_ID) VALUES
 ('A01','Main Hall','Jalan Sunsuria, Bandar Sunsuria, 43900 Sepang, Selangor','HST2609001'),
@@ -63,7 +65,11 @@ INSERT INTO Lease (lease_no, start_date, intended_end_date, actual_end_date, lea
 ('7','2026-04-01','2026-10-01',NULL,'active','CST2609007','BED00008','7','ADM2609002'),
 ('8','2026-04-15','2026-10-15',NULL,'active','CST2609008','BED00009','8','ADM2609003'),
 ('9','2026-05-01','2026-11-01',NULL,'active','CST2609009','BED00010','9','ADM2609003'),
-('10','2026-05-15','2026-11-15',NULL,'active','CST2609010','BED00011','10','ADM2609002');
+('10','2026-05-15','2026-11-15',NULL,'active','CST2609010','BED00011','10','ADM2609002'),
+('11','2026-06-01','2026-12-01',NULL,'active','CST2609011','BED00006','13','ADM2609002'),
+('12','2026-06-15','2026-12-15',NULL,'active','CST2609012','BED00012','14','ADM2609003'),
+('13','2026-06-01','2026-12-01',NULL,'active','CST2609005','BED00005','15','ADM2609003'),
+('14','2026-03-01','2026-09-01','2026-04-15','terminated_early','CST2609009','BED00012','16','ADM2609003');
 
 INSERT INTO nok (nok_ID, nok_full_name, relationship, nok_address, nok_phone_no, student_ID) VALUES
 ('nok00001','Farah Rahman','Mother','12 Jalan Pudu, 55100 KL','+6012-3456780','CST2609001'),
